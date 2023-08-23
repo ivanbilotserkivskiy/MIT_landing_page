@@ -1,0 +1,42 @@
+.feedback {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-form-color;
+  &__name {
+    @include formStatus;
+  }
+  &__email {
+    @include formStatus;
+    margin-top: 16px;
+  }
+  &__message {
+    @include formStatus;
+    padding: 14px 0 110px 10px;
+    margin-top: 16px;
+  }
+  &__send {
+    padding: 15px 0;
+    margin-top: 16px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    color: $header-color;
+    border: none;
+    background-color: $accent-color;
+    @include transition (background-color, 700ms);
+
+    @include onTablet () {
+      margin-top: 32px;
+    }
+    &:hover {
+      @include buttonHover;
+    }
+    &:active {
+      background-color: $pressed-color;
+    }
+  }
+}

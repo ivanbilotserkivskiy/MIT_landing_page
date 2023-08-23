@@ -1,0 +1,98 @@
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  @include transition (opacity, 700ms);
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.menu {
+  height: 100vh;
+  @include contentPaddingInLine;
+  padding-block: 25px 31px;
+  overflow: auto;
+  opacity: 0;
+  box-sizing: border-box;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $header-color;
+  background-color: $accent-color;
+  @include onTablet {
+    padding-block: 50px 0;
+
+  }
+  @include onDesktop {
+    padding-block: 52px 0;
+  }
+
+  &__control {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__close {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-image: url("../images/icons/icon-close.svg");
+    @include onTablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__nav {
+    font-size: 22px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+  }
+  &__list {
+    margin: 40px 0 0;
+  }
+  &__item {
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+
+  }
+  &__link {
+    color: inherit;
+    @include underLine;
+  }
+  &__contacts {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+  &__call {
+    margin-top: 16px;
+
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+
+    @include underLine;
+
+  }
+  &__description {
+    margin-top: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    @include transition (color, 700ms);
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

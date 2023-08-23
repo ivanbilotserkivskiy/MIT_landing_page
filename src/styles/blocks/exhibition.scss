@@ -1,0 +1,50 @@
+.exhibition {
+  @include contentPaddingInLine;
+  @include contentPaddingTop;
+  background: $header-color;
+  &__container {
+    @include contentWidth;
+    @include containerSet;
+  }
+  &__title {
+    @include titleFont;
+  }
+  &__description {
+    @include contentWidth;
+    @include align-width;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+  }
+  &__collection {
+    @include contentWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__all {
+    margin-top: 40px;
+    padding: 15px 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-color;
+    color: $header-color;
+    @include transition (background-color, 700ms);
+    @include onTablet {
+      padding-inline: 107px;
+    }
+    @include onDesktop {
+      padding-inline: 75px;
+    }
+    &:hover {
+      @include buttonHover;
+    }
+    &:active {
+      background-color: $pressed-color;
+    }
+
+  }
+}
